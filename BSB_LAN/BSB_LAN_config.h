@@ -33,8 +33,8 @@ byte UseEEPROM = 0;
  *  Change this if you have more than one BSB-LAN adapter in your LAN, so that there aren't any address conflicts.
  *  MAC address here only affects the LAN shield, it doesn't apply to the WiFi-ESP-solution.
 */
-byte mac[6] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };
-//byte mac[6] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };
+//byte mac[6] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };
+byte mac[6] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };
 
 /*
  * Initialize the Ethernet server library
@@ -144,8 +144,9 @@ int logTelegram = LOGTELEGRAM_OFF;
 // Logging data from parameters
 // Interval and list of parameters can be redefined through /L command during runtime
 // Data will be written to "datalog.txt"
-bool logCurrentValues = false;      // Save data in datalog.txt on SD-card.
-unsigned long log_interval = 3600;  // Logging interval (to SD card and MQTT broker) in seconds
+//bool logCurrentValues = false;      // Save data in datalog.txt on SD-card.
+bool logCurrentValues = true;      // Save data in datalog.txt on SD-card.
+unsigned long log_interval = 60;  // Logging interval (to SD card and MQTT broker) in seconds
 int log_parameters[40] = {
   8700,                   // Außentemperatur
   8743,                   // Vorlauftemperatur
